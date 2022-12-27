@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <div className="navbar bg-info ">
@@ -32,7 +42,7 @@ const Navbar = () => {
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-info rounded-box w-52">
                         <li>
                             <Link className="justify-between">
-                                Profile
+                                <button onClick={handleLogOut}> About </button>
                             </Link>
                         </li>
                         <li><Link>Settings</Link></li>
