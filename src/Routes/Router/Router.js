@@ -5,6 +5,7 @@ import Home from "../../pages/Home/Home/Home";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 import Media from "../../pages/Media/Media";
+import SinglePost from "../../pages/Media/SinglePost";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
             {
                 path: '/allPost',
                 element: <Media></Media>
+            },
+            {
+                path: '/allPost/:id',
+                element: <SinglePost></SinglePost>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allPost/${params.id}`)
             },
             {
                 path: '/login',
