@@ -90,7 +90,7 @@ const Login = () => {
                 <p className='my-4'>New to JS Media?<Link to='/signup' className='text-accent'> Create new account</Link> </p>
                 <div className="divider">OR</div>
                 <div className='mx-12'>
-                    <button onClick={handleGoogle} className="btn btn-outline btn-primary"><span className='mr-2'><FaGoogle /></span>Google</button>
+                    <button onClick={handleGoogle} className="btn btn-accent w-full"><span className='mr-2'><FaGoogle /></span>Google</button>
                 </div>
             </div>
         </div>

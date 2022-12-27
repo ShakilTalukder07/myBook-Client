@@ -4,6 +4,7 @@ import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
+import Media from "../../pages/Media/Media";
 
 const router = createBrowserRouter([
     {
@@ -16,13 +17,17 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
+                path: '/allPost',
+                element: <Media></Media>
+            },
+            {
                 path: '/login',
                 element: <Login></Login>
             },
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
-            }
+            },
         ]
     }
 ])

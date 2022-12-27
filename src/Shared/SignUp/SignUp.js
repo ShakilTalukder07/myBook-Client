@@ -30,8 +30,7 @@ const SignUp = () => {
                 console.log(result.user);
                 const userInfo = {
                     name: result.user.displayName,
-                    email: result.user.email,
-                    role: 'buyer'
+                    email: result.user.email
                 }
                 fetch('https://resala-server.vercel.app/users', {
                     method: "POST",
@@ -52,7 +51,7 @@ const SignUp = () => {
     const handleSignUp = data => {
         console.log(data);
         setSignUpError('');
-        createUser(data.email, data.password, data.role)
+        createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -62,7 +61,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email, data.role)
+                        saveUser(data.name, data.email)
                     })
                     .catch(error => console.error(error))
             })
@@ -99,13 +98,6 @@ const SignUp = () => {
                         })} className="input input-bordered w-full max-w-xs" type="text" />
                         {errors.name && <p className='text-red-600'>{errors.name.message}</p>}
                     </div>
-                    <label className="label"> <span className="label-text">SignUp as:</span></label>
-                    <select className="select select-bordered w-full max-w-xs"
-                        {...register('role', { required: 'role is required' })}
-                    >
-                        <option value='buyer' >Buyer</option>
-                        <option value='seller'>Seller</option>
-                    </select>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
                         <input {...register("email", {
@@ -128,7 +120,7 @@ const SignUp = () => {
                 <p className='mt-2'>Already have an account<Link to='/login' className='text-accent'> Please Log In</Link></p>
                 <div className="divider">OR</div>
                 <div className='mx-12'>
-                    <button onClick={handleGoogle} className="btn btn-outline btn-primary"><span className='mr-2'><FaGoogle /></span>Google</button>
+                    <button onClick={handleGoogle} className="btn btn-outline btn-accent w-full"><span className='mr-2'><FaGoogle /></span>Google</button>
                 </div>
             </div>
         </div>
