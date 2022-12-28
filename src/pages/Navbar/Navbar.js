@@ -36,17 +36,19 @@ const Navbar = () => {
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/80/people" alt='' />
+                            <img src="https://i.ibb.co/7KD3NwY/80-800194-transparent-users-icon-png-flat-user-icon-png.png" alt='' />
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-info rounded-box w-52">
                         <li>
-                            <Link className="justify-between">
-                                <button onClick={handleLogOut}> About </button>
+                            <Link to='/about' className="justify-between">
+                                <button> About </button>
                             </Link>
                         </li>
                         <li><Link>Settings</Link></li>
-                        <li><Link>Logout</Link></li>
+                        <li><Link>
+                            <button onClick={handleLogOut}> Logout </button>
+                        </Link></li>
                     </ul>
                 </div>
             </div>
