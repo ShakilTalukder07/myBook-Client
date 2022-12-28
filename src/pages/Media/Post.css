@@ -29,6 +29,12 @@
     opacity: 1;
     transition: opacity 500ms;
 }
+.heart:disabled{
+    fill: red;
+    color: red;
+    opacity: 1;
+    transition: opacity 500ms;
+}
 
 .comment{
     color: black;
